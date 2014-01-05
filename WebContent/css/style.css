@@ -91,6 +91,13 @@
 @font-face {
     font-family: "Emmy3d";
     src: url(../fonts/Emmy3d.ttf);
+
+	src: url('../fonts/Emmy3d.eot');
+	src: url('../fonts/Emmy3d.eot?#iefix') format('eot'),
+		url('../fonts/Emmy3d.woff') format('woff'),
+		url('../fonts/Emmy3d.ttf') format('truetype'),
+		url('../fonts/Emmy3d.svg') format('svg');
+
 }
 
 .customfont {
