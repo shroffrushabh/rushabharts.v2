@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Rushabh Arts</title>
+<meta name="author" content="Rushabh Shroff">
+<!-- CSS Code -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reset.css">
+<!-- JS Code -->
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+<!--<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function() {
+    //app.checkScreenResolution();
+    jQuery(".list-container").css("width","1000");
+    
+    resize(jQuery("#header_img"), window.innerWidth, 205 * window.innerWidth/screen.width);
+    resize(jQuery("#footer_img"), window.innerWidth, 205 * window.innerWidth/screen.width);
+
+    /*$("ul.thumb li").children().each(function(){
+      $(this).css({'z-index' : '0'}); 
+    });*/
+    hoverImg();
+    app.showRecaptcha('recaptcha_div');
+	app.bindSubmit();
+});
+
+window.onresize = function(){
+    var elm = jQuery(".thumb");
+    /*if (window.innerWidth < 1000){
+      jQuery(".list-container").css("width","100%");
+    }
+    else
+      jQuery(".list-container").css("width","1000");*/
+    //app.checkScreenResolution();
+    resize(jQuery("#header_img"), window.innerWidth, 205 * window.innerWidth/screen.width);
+    resize(jQuery("#footer_img"), window.innerWidth, 205 * window.innerWidth/screen.width);
+};
+
+function hoverImg() {    
+    $("ul.thumb li").hover(function() {
+      $(this).css({'z-index' : '1'});
+      $(this).find('img') 
+          .animate({
+          marginTop: '-='+150+'px',
+          marginLeft: '-='+150+'px',
+          width: '320px',
+          height: '320px', 
+          padding: '20px'
+        }, 200);
+      } , function() {
+      $(this).css({'z-index' : '0'}); 
+      $(this).find('img')  
+        .animate({
+          marginTop: '0', 
+          marginLeft: '0',
+          width: '200px', 
+          height: '200px', 
+          padding: '5px'
+        }, 400);
+  }); 
+}
+
+function resize(element, width, height){
+    element.width(width);
+    element.height(height);
+}   
+
+</script>
+
+</head>
+
+<body>
+<!-- Section #1 -->
+<section id="home" data-speed="10" data-type="background" style="background-position: 50% 0px;">
+    <img id="header_img" src="upper.jpg">
+    <article id="logo1"></article>
+    <div class="addlogoacctoscreenMainPage"></div>
+
+    <div class="list-container">
+      <ul class="thumb" style="margin-bottom:30px">
+        <li><img src="photos/home13.jpg" id="3"/></li> 
+        <li> <img src="photos/home19.jpg" id="4"/></li>
+        <li><img src="photos/home15.jpg" id="5"/></li>
+        <li><img src="photos/home8.jpg" id="6"/></li>
+      </ul>
+      <ul class="thumb">
+        <li><img src="photos/home9.jpg" id="3"/></li> 
+        <li><img src="photos/home1.jpg" id="4"/></li>
+        <li><img src="photos/home4.jpg" id="5"/></li>
+        <li><img src="photos/home3.jpg" id="6"/></li>
+      </ul>  
+      <img id="logo2" src="logo2.png">    
+
+    </div>
+</section>
+<!-- Section #2 -->
+<section id="about" data-speed="4" data-type="background" style="background-position: 50% 0px;">
+  <br><br>
+  <div class="pagetitle">
+    <span class="customfont" style="font-size:90px">About us</span>
+  </div>
+  <div class="addlogoacctoscreen"></div>
+  <div class="about-container">
+    <p class="customfont">
+    Rushabh in sanskrit means superior, best & excellence.
+    The word art means quality, production & expression of what
+    is beautiful, appealing and has more than ordinary significance.
+    <br><br>
+    Art is creativity & passion for improving the aesthetic appeal.
+    Be it any occasion, we make something exclusive that expresses your
+    sentiment. We beautify the very simple objects which will be appealing to the
+    eye. 
+    <br><br>
+    At Rushabh Arts we create products to express our clients emotions in an
+    artistic way. We tailor according to the needs of the client by 
+    making various everyday stationery item and seasonal items such as 
+    diaries, penstands, notepads, paperpads ,rangolis, thalis, diya.etc.
+    Our products are highly appreciated by our clients.
+    We are known for our personalised trousseau packing which makes the
+    product even more endearing.
+    <br><br>    
+    We supply our items to many leading stores in Mumbai.
+    </p>
+  </div>
+</section>
+
+<!-- Section #3 -->
+<section id="gallery" data-speed="4" data-type="background" style="background-position: 50% 0px;">
+  <br>
+  <div class="pagetitle">
+    <span class="customfont" style="font-size:90px">Gallery</span>
+  </div>
+  <div class="addlogoacctoscreen"></div>
+  <br>
+  <div id="navcontainer">
+    <ul>
+        <li class="customfont" id="Envelopes">Envelopes</li>
+        <li class="customfont" id="Thali">Thali</li>
+        <li class="customfont" id="Rangoli">Rangoli</li>
+        <li class="customfont" id="Diya">Diya</li>
+        <li class="customfont" id="Others">Others</li>
+      </ul>
+  </div>
+  <br>
+  <div class="gallery-container">
+      <ul>
+        <li><a class="next green" href="#" id="next" onclick="return false;">next</a></li>
+        <li><a class="previous green" href="#" id="previous" onclick="return false;">prev</a></li>
+      </ul>
+      <ul id="images"></ul>
+  </div>
+</section>
+
+<!-- Section #4 -->
+<section id="inquiry" data-speed="4" data-type="background" style="background-position: 50% 0px;">
+  <br><br>
+  <div class="pagetitle">
+    <span class="customfont" style="font-size:90px">Contact us</span>
+  </div>
+  <div class="addlogoacctoscreen"></div>  
+  <div id="inquirycontainer">
+
+  <div style="text-align: center;margin-top: 250px; width:75%; margin-left:auto;margin-right:auto;" id="spinner">
+	<span class="customfont">Sending Request</span>
+	<br>
+	<img src="photos/spin.gif"><br>
+  </div>
+  	 
+  <form method="POST" id="table">
+    <table style="margin:60px auto;">
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Inquiry:</td>
+        <td class="inputboxes"><textarea cols="70" class="textAreaStyle" id="inquiryText"></textarea></td>        
+      </tr>
+
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Name:</td>    
+        <td class="inputboxes"><input type="text" id="firstName" class="input" placeholder="first"></td>    
+        <td class="inputboxes"><input type="text" id="lastName" class="input" style="margin-left:-210px" placeholder="last"></td>    
+      </tr>
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Email:</td>
+        <td class="inputboxes"><input type="email" id="emailId" class="input" placeholder="abc@mail.com"></td>        
+      </tr>
+            
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Country:</td>
+        <td class="inputboxes"><input type="text" id="country" class="input"></td>        
+      </tr>
+      <tr class="tablerow">
+        <td class="tablelabel customfont">City:</td>
+        <td class="inputboxes"><input type="text" id="city" class="input"></td>        
+      </tr>
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Mobile:</td>
+        <td class="inputboxes"><input type="text" id="mobile" class="input"></td>        
+      </tr>
+      <tr class="tablerow">
+        <td class="tablelabel customfont">Enter the code:</td>
+        <td style="padding-left:7px">
+        <div id="recaptcha_div">        	
+        </div>
+        <br>
+        <button id="submit" type="submit">Validate and Submit</button>
+		<span id="errormsg">Incorrect Code!!!</span>
+        </td>
+      </tr>
+    </table>    
+  </form>
+
+  </div>
+  <img id="footer_img" src="lower.jpg">
+  
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
