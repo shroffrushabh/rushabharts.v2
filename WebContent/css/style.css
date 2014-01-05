@@ -90,14 +90,12 @@
 
 @font-face {
     font-family: "Emmy3d";
-    src: url(../fonts/Emmy3d.ttf);
 
-	src: url('../fonts/Emmy3d.eot');
-	src: url('../fonts/Emmy3d.eot?#iefix') format('eot'),
-		url('../fonts/Emmy3d.woff') format('woff'),
-		url('../fonts/Emmy3d.ttf') format('truetype'),
-		url('../fonts/Emmy3d.svg') format('svg');
-
+	src: url('../fonts/Emmy3d.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Emmy3d.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    	 url('../fonts/Emmy3d.woff') format('woff'), /* Modern Browsers */
+    	 url('../fonts/Emmy3d.ttf')  format('truetype'), /* Safari, Android, iOS */
+    	 url('../fonts/Emmy3d.svg#svgFontName') format('svg') /* Legacy iOS */
 }
 
 .customfont {
