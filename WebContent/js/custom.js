@@ -4,8 +4,7 @@ var app = {
     timerObj:null,
     numberOfImages:0,
     nextBtnWidth:35,
-    serverLocation:"127.0.0.1:5000",
-    previousGalleryClick:"Thali",
+    previousGalleryClick:"Envelopes",
     addlogoAccToScreen:function(){
         jQuery(".addlogoacctoscreen").append('<div class="pagetitle"><span class="customfont" style="font-size:90px">Rushabh Arts</span></div>');
         jQuery(".addlogoacctoscreen").append('<div class="pagetitle"><span class="customfont" style="font-size:40px">Please increase your screen resolution...</span></div>');
@@ -151,6 +150,11 @@ var app = {
         others[0] = "photos/others/others1.jpg";
         others[1] = "photos/others/others2.jpg";
 
+        jQuery("#Envelopes").live('click',function(event){
+            if(!app.checkIfSameBtnClicked("Envelopes")) 
+            	app.removeSlideShowImagesAndReinstantiate(env);         
+        });                       
+        
         jQuery("#Thali").bind('click',function(event){
             if(!app.checkIfSameBtnClicked("Thali"))
                 app.removeSlideShowImagesAndReinstantiate(thalis);
@@ -165,11 +169,6 @@ var app = {
             if(!app.checkIfSameBtnClicked("Diya"))
                 app.removeSlideShowImagesAndReinstantiate(diyas);         
         });         
-        
-        jQuery("#Envelopes").live('click',function(event){
-            if(!app.checkIfSameBtnClicked("Envelopes"))
-                app.removeSlideShowImagesAndReinstantiate(env);         
-        });                       
         
         jQuery("#Others").live('click',function(event){
             if(!app.checkIfSameBtnClicked("Others"))
@@ -233,7 +232,7 @@ var app = {
             app.createImgTags(arr, $("#images"), 700, 525);
             app.startSlideShow();
             app.startSlideShowTimer();    
-        });    
+        });
     },
 
     validateFields:function(){
@@ -345,7 +344,7 @@ $(window).load(function() {
     env[6] = "photos/envelopes/env7.jpg";        
     env[7] = "photos/envelopes/env8.jpg";       
     env[8] = "photos/envelopes/env9.jpg";           
-    
+
     app.createImgTags(env, $("#images"), 700, 525);
     app.startSlideShow();
     app.startSlideShowTimer();    
