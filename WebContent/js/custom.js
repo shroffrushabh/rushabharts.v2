@@ -335,18 +335,18 @@ var app = {
 };
 
 $(window).load(function() {
-    thalis=[];
-    thalis[0] = "photos/thalis/thali1.jpg";
-    thalis[1] = "photos/thalis/thali2.jpg";
-    thalis[2] = "photos/thalis/thali3.jpg"; 
-    thalis[3] = "photos/thalis/thali4.jpg";  
-    thalis[4] = "photos/thalis/thali5.jpg";
-    thalis[5] = "photos/thalis/thali6.jpg";
-    thalis[6] = "photos/thalis/thali7.jpg";        
-    thalis[7] = "photos/thalis/thali8.jpg";       
-    thalis[8] = "photos/thalis/thali9.jpg";           
-
-    app.createImgTags(thalis, $("#images"), 700, 525);
+    env=[];
+    env[0] = "photos/envelopes/env1.jpg";
+    env[1] = "photos/envelopes/env2.jpg";
+    env[2] = "photos/envelopes/env3.jpg";
+    env[3] = "photos/envelopes/env4.jpg";
+    env[4] = "photos/envelopes/env5.jpg";
+    env[5] = "photos/envelopes/env6.jpg";
+    env[6] = "photos/envelopes/env7.jpg";        
+    env[7] = "photos/envelopes/env8.jpg";       
+    env[8] = "photos/envelopes/env9.jpg";           
+    
+    app.createImgTags(env, $("#images"), 700, 525);
     app.startSlideShow();
     app.startSlideShowTimer();    
     app.bindNavBarButtons();    
