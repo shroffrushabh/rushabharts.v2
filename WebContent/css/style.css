@@ -65,6 +65,7 @@
 .list-container {
   width: 950px;
   margin: 20px auto;
+  display:none;
 }
 
 .thumb {
@@ -202,8 +203,13 @@ ul li a.previous{
     height: 650px;
     border-radius:15px;
     margin: 0 auto;    
+	display:none;	
 }
- 
+
+#modalcontainer{
+	display:none;	
+} 
+
 .inputboxes{
     height: 40px;
 } 
@@ -257,8 +263,31 @@ textarea {
     font-size: 30px;
     border-radius:6px;
 }
+
 #errormsg {
     font-family: "Emmy3d", Verdana, Tahoma;
     font-size: 30px;
+}
+
+#modal
+{
+    z-index:100;
+    position:absolute;    
+    color:white;    
+	position:absolute;
+	background:rgba(0,0,0,0.2);
+	border-radius:14px;
+	padding:8px;
+}
+
+#closemodal {
+	position:absolute;
+	background:url(../close.png) 0 0 no-repeat;
+	width:24px;
+	height:27px;
+	display:block;
+	text-indent:-9999px;
+	top:-7px;
+	right:-7px;
 }
 
